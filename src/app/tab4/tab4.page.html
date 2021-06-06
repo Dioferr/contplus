@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Avaliação</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Avaliação</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-explore-container name="Tab 3 page"></app-explore-container>
+
+  <ion-text color="primary">
+      <h1>Como classifica a sua experiência?</h1>
+  </ion-text>
+  <div class="flex-container">
+    <ng-container *ngFor="let star of stars">
+      <app-star [starId]="star" [rating]="hoverState || rating" (enter)="enter($event)" (leave)="leave($event)"
+        (bigClick)="updateRating(star)">
+      </app-star>
+    </ng-container>
+  </div>
+  
+  <div>
+    <ion-text color="secondary">
+      <h1>Escreva o que acha que podemos mudar para melhorar a sua experiência.</h1>  
+    </ion-text>
+    
+    <ion-input placeholder = "Escreva aqui"></ion-input>
+
+  </div>
+
+
+
+
+
+</ion-content>
